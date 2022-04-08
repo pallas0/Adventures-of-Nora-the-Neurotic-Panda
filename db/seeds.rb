@@ -8,10 +8,30 @@
 #User.destroy_all
 
 User.destroy_all
+Situation.destroy_all
+Choice.destroy_all
 
 puts "seeding users..."
 
 User.create(name: 'Nora', username: 'neuroticpanda', email: 'neuroticpanda@gmail.com', password: 'pandapanda')
-# User.create()
+
+puts "seeding situations..."
+situation1 = Situation.create(story_text: "1")
+situation2a = Situation.create(story_text: "2A")
+situation2b = Situation.create(story_text: "2B")
+
+#puts "seeding choices"
+Choice.create(choice_text: "1A", situation_id: situation1.id)
+
 
 puts "seeding complete!"
+
+
+#to mention to jonathon/general scratch
+#ok, w this, able to access choice instance through situation instance
+#but not able to access situation instance through choice instance
+
+#model relationships???
+#changed 'has_many' to 'belongs_to' in choices model, stopped working
+#as in, returned nil
+#can you have both? what exactly is the deal w foreign keys?
