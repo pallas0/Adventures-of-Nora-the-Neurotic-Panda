@@ -38,14 +38,3 @@ user_choice1a = UserChoice.create(user: user, choice: choice1a)
 
 puts "seeding complete!"
 
-
-#notes/general scratch
-#ok, w this, able to access choice instance through situation instance
-#but not able to access situation instance through choice instance
-
-#model relationships???
-#changed 'has_many' to 'belongs_to' in choices model, stopped working
-#as in, returned nil
-#can you have both? what exactly is the deal w foreign keys?
-
-#end
