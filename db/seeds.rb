@@ -5,22 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-#User.destroy_all
-
 User.destroy_all
+
 Situation.destroy_all
 Choice.destroy_all
 
 puts "seeding users..."
 
-User.create(name: 'Nora', username: 'neuroticpanda', email: 'neuroticpanda@gmail.com', password: 'pandapanda')
+User.create(name: 'Jesus', username: 'jdog', email: 'son@fathersonholyghost.com', password: 'yourlordandsavior')
 
 puts "seeding situations..."
 situation1 = Situation.create(story_text: "1")
 situation2a = Situation.create(story_text: "2A")
 situation2b = Situation.create(story_text: "2B")
 
-#puts "seeding choices"
+puts "seeding choices"
 Choice.create(choice_text: "1A", situation_id: situation1.id)
 
 
@@ -35,3 +34,5 @@ puts "seeding complete!"
 #changed 'has_many' to 'belongs_to' in choices model, stopped working
 #as in, returned nil
 #can you have both? what exactly is the deal w foreign keys?
+
+#end

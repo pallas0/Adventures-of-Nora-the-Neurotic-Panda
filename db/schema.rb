@@ -10,15 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_08_214349) do
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+ActiveRecord::Schema.define(version: 2022_04_11_183742) do
 
   create_table "choices", force: :cascade do |t|
     t.string "choice_text"
-    t.bigint "situation_id"
-    t.index ["situation_id"], name: "index_choices_on_situation_id"
+  end
+
+  create_table "situation_choices", force: :cascade do |t|
+    t.integer "situation_id", null: false
+    t.integer "choice_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["choice_id"], name: "index_situation_choices_on_choice_id"
+    t.index ["situation_id"], name: "index_situation_choices_on_situation_id"
   end
 
   create_table "situations", force: :cascade do |t|
@@ -26,8 +30,8 @@ ActiveRecord::Schema.define(version: 2022_04_08_214349) do
   end
 
   create_table "user_choices", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "choice_id", null: false
+    t.integer "user_id", null: false
+    t.integer "choice_id", null: false
     t.index ["choice_id"], name: "index_user_choices_on_choice_id"
     t.index ["user_id"], name: "index_user_choices_on_user_id"
   end
@@ -39,6 +43,8 @@ ActiveRecord::Schema.define(version: 2022_04_08_214349) do
     t.string "password"
   end
 
+  add_foreign_key "situation_choices", "choices"
+  add_foreign_key "situation_choices", "situations"
   add_foreign_key "user_choices", "choices"
   add_foreign_key "user_choices", "users"
 end

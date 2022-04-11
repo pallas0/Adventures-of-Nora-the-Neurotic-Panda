@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :situation_choices
   resources :user_choices
   resources :choices
   resources :situations

@@ -1,0 +1,2 @@
+class SituationChoicesController < ApplicationController
+end
