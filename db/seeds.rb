@@ -5,14 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+SituationChoice.destroy_all
+UserChoice.destroy_all
 User.destroy_all
-
 Situation.destroy_all
 Choice.destroy_all
 
+
 puts "seeding users..."
 
-User.create(name: 'Jesus', username: 'jdog', email: 'son@fathersonholyghost.com', password: 'yourlordandsavior')
+user = User.create(name: 'Jesus', username: 'jdog', email: 'son@fathersonholyghost.com', password: 'yourlordandsavior')
 
 puts "seeding situations..."
 situation1 = Situation.create(story_text: "1")
@@ -24,8 +26,12 @@ choice1a = Choice.create(choice_text: "1A")
 choice1b = Choice.create(choice_text: "1B")
 
 puts "seeding situation_choices..."
-situation_choice1a = SituationChoice.create(choice: choice1a, situation: situation1)
-situation_choice1b = SituationChoice.create(choice: choice1b, situation: situation1)
+SituationChoice.create(choice: choice1a, situation: situation1)
+SituationChoice.create(choice: choice1a, situation: situation2a)
+SituationChoice.create(choice: choice1b, situation: situation1)
+
+puts "seeding user_choices..."
+user_choice1a = UserChoice.create(user: user, choice: choice1a)
 
 
 puts "seeding complete!"
