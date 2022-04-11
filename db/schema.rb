@@ -19,8 +19,7 @@ ActiveRecord::Schema.define(version: 2022_04_11_183742) do
   create_table "situation_choices", force: :cascade do |t|
     t.integer "situation_id", null: false
     t.integer "choice_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.boolean "outcome"
     t.index ["choice_id"], name: "index_situation_choices_on_choice_id"
     t.index ["situation_id"], name: "index_situation_choices_on_situation_id"
   end

@@ -24,11 +24,13 @@ situation2b = Situation.create(story_text: "2B")
 puts "seeding choices"
 choice1a = Choice.create(choice_text: "1A")
 choice1b = Choice.create(choice_text: "1B")
+choice2aa = Choice.create(choice_text: "2AA")
+choice2ab = Choice.create(choice_text: "2AB")
 
 puts "seeding situation_choices..."
-SituationChoice.create(choice: choice1a, situation: situation1)
-SituationChoice.create(choice: choice1a, situation: situation2a)
-SituationChoice.create(choice: choice1b, situation: situation1)
+SituationChoice.create(choice: choice1a, situation: situation1, outcome: true)
+SituationChoice.create(choice: choice1a, situation: situation2a, outcome: false)
+SituationChoice.create(choice: choice1b, situation: situation1, outcome: true)
 
 puts "seeding user_choices..."
 user_choice1a = UserChoice.create(user: user, choice: choice1a)
