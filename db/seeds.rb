@@ -20,13 +20,18 @@ situation2a = Situation.create(story_text: "2A")
 situation2b = Situation.create(story_text: "2B")
 
 puts "seeding choices"
-Choice.create(choice_text: "1A", situation_id: situation1.id)
+choice1a = Choice.create(choice_text: "1A")
+choice1b = Choice.create(choice_text: "1B")
+
+puts "seeding situation_choices..."
+situation_choice1a = SituationChoice.create(choice: choice1a, situation: situation1)
+situation_choice1b = SituationChoice.create(choice: choice1b, situation: situation1)
 
 
 puts "seeding complete!"
 
 
-#to mention to jonathon/general scratch
+#notes/general scratch
 #ok, w this, able to access choice instance through situation instance
 #but not able to access situation instance through choice instance
 
