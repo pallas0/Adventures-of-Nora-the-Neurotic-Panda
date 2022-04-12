@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 function SignUp() {
   return (
     <div>
+      <h1>To begin, please fill out the following information:</h1>
       <TextField
       label="Name"
       defaultValue=""/>
