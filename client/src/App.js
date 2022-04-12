@@ -4,25 +4,21 @@ import Welcome  from './Welcome.js'
 import SignUp from './SignUp';
 import Login from './Login';
 import Adventure from './Adventure';
-import {Route, Switch} from 'react-router-dom';
+import {Routes, Route} from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <Switch>
-        <Route exact path='/signup'>
-          <SignUp/>
+      <Routes>
+        <Route path='/signup' element={<SignUp/>}>
         </Route>
-        <Route exact path='/login'>
-          <Login/>
+        <Route path='/login' element={<Login/>}>
         </Route>
-        <Route exact path='/adventure'>
-          <Adventure/>
+        <Route path='/adventure' element={<Adventure/>}>
         </Route>
-        <Route exact path='/'>
-          <Welcome/>
+        <Route exact path='/' element={<Welcome/>}>
         </Route>
-      </Switch>
+      </Routes>
     </div>
   );
 }

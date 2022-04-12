@@ -1,13 +1,24 @@
-import * as React from 'react';
+import React from 'react'
 import Button from '@mui/material/Button';
-import { Route, Switch } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Welcome() {
+  
+  let navigate = useNavigate();
+
+  function handleBeginClick() {
+    navigate("/signup")
+  }
+  
+  function handleResumeClick() {
+    navigate("/adventure")
+  }
+
   return (
     <div>
         <h1>Adventures of Nora the Neurotic Panda</h1>
-        <Button>Begin Adventure</Button>
-        <Button>Resume Adventure</Button>
+        <Button onClick={handleBeginClick}>Begin Adventure</Button>
+        <Button onClick={handleResumeClick}>Resume Adventure</Button>
     </div>
   )
 }
