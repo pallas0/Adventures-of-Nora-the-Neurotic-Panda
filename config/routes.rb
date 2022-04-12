@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   
   resources :situation_choices
   resources :user_choices
-  resources :choices
-  resources :situations
+  resources :choices, only: [:index, :show]
+  resources :situations, only: [:index, :show]
   resources :users
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
