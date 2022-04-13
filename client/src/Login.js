@@ -1,10 +1,13 @@
 import React, {useState} from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
+  let navigate = useNavigate();
 
   function handleClick(e) {
     e.preventDefault();
@@ -21,6 +24,7 @@ function Login() {
         r.json().then((err) => console.log(err))
       }
     });
+    navigate("/adventure")
   }
 
   return (

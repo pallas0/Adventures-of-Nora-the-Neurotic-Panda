@@ -2,9 +2,13 @@ import React, {useState} from 'react'
 import FormControl from '@mui/material/FormControl';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import { useNavigate } from "react-router-dom";
+
 function SignUp() {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
+
+  let navigate = useNavigate();
 
   function handleClick(e) {
     e.preventDefault()
@@ -24,6 +28,7 @@ function SignUp() {
         r.json().then((err) => console.log(err));
       }
     });
+    navigate("/adventure")
   }
 
 

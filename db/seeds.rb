@@ -5,6 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+#helpful commands:
+#rake tmp:clear
 SituationChoice.destroy_all
 UserChoice.destroy_all
 User.destroy_all
@@ -14,7 +17,7 @@ Choice.destroy_all
 
 puts "seeding users..."
 
-user = User.create(username: 'jesus', password_digest: 'yourlordandsavior')
+user = User.create(username: "jesus", password: "test")
 
 puts "seeding situations..."
 situation1 = Situation.create(story_text: "1")
