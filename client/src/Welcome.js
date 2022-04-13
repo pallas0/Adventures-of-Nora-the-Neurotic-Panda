@@ -16,11 +16,24 @@ function Welcome() {
   let navigate = useNavigate();
 
   function handleBeginClick() {
+    if (user) {
+      fetch("/logout", { method: "DELETE"})
+      .then((r) => {
+        if (r.ok) {
+          setUser(null)
+        }
+      })
+    }
     navigate("/signup")
   }
   
   function handleResumeClick() {
-    navigate("/adventure")
+    if (user) {
+      navigate("/adventure")
+    }
+    else {
+      navigate("/login")
+    }
   }
 
   return (
