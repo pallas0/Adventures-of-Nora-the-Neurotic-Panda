@@ -14,7 +14,7 @@ Choice.destroy_all
 
 puts "seeding users..."
 
-user = User.create(name: 'Jesus', username: 'jdog', email: 'son@fathersonholyghost.com', password: 'yourlordandsavior')
+user = User.create(username: 'jesus', password_digest: 'yourlordandsavior')
 
 puts "seeding situations..."
 situation1 = Situation.create(story_text: "1")
