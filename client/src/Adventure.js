@@ -21,13 +21,18 @@ function Adventure() {
  
 
   function handleLogOutClick() {
-    fetch("/logout", { method: "DELETE"})
+    if (user) {
+      fetch("/logout", { method: "DELETE"})
       .then((r) => {
         if (r.ok) {
           setUser(null)
           navigate("/")
         }
       })
+    }
+    else {
+      navigate("/")
+    }
   }
 
   const render_story = user ? <Container key={user.upcoming_situation.id}>
