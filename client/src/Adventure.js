@@ -5,8 +5,7 @@ import Container from '@mui/material/Container';
 
 function Adventure() {
   const [user, setUser] = useState(null);
-  const [situationText, setSituationText] = useState("empty")
-
+  
   let navigate = useNavigate();
 
   useEffect(() => {
@@ -37,7 +36,6 @@ function Adventure() {
 
 
 
-
   const mapped_choices = () => {
     if (user) {
       const choice_list = user.upcoming_choices.map((choice) => {
@@ -47,15 +45,7 @@ function Adventure() {
     }
   }
 
-  // function test() {
-  //   if (user) {
-  //     console.log(mapped_choices())
-  //   }
-  //   else {
-  //     console.log("loading")
-  //   }
-  // }
-  // test()
+ 
 
   return (
     <div>
