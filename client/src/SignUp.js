@@ -24,11 +24,11 @@ function SignUp() {
     }).then((r) => {
       if (r.ok) {
         r.json().then((user) => console.log(user));
+        navigate("/adventure")
       } else {
         r.json().then((err) => console.log(err));
       }
     });
-    navigate("/adventure")
   }
 
 
