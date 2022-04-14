@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 function Welcome() {
   const [user, setUser] = useState(null);
+  let navigate = useNavigate();
 
   useEffect(() => {
     fetch("/me").then((r) => {
@@ -13,7 +14,6 @@ function Welcome() {
     })
   }, []);
   
-  let navigate = useNavigate();
 
   function handleBeginClick() {
     if (user) {
