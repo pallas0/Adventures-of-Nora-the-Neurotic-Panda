@@ -36,38 +36,33 @@ function Adventure() {
   </Container> : <Container></Container>
 
 
-  // const render_user = user.upcoming_choices.map((choice) => {
-  //     <Container key={choice.id}>{choice.choice_text}</Container>
-  //   })
 
-  //console.log(render_user())
 
-  function mapped_choices() {
+  const mapped_choices = () => {
     if (user) {
       const choice_list = user.upcoming_choices.map((choice) => {
-        return choice.choice_text
+        return <Container key={choice.id}>{choice.choice_text}</Container>
       })
       return choice_list
     }
   }
-  // const rendered_user = user ? mapped_choices() : "nope"
 
-  function test() {
-    if (user) {
-      console.log(mapped_choices())
-    }
-    else {
-      console.log("loading")
-    }
-  }
-  test()
+  // function test() {
+  //   if (user) {
+  //     console.log(mapped_choices())
+  //   }
+  //   else {
+  //     console.log("loading")
+  //   }
+  // }
+  // test()
 
   return (
     <div>
       <Button onClick={handleLogOutClick}>Logout</Button>
       <Button>Save</Button>
       {render_story}
-      {/* {rendered_user} */}
+      {mapped_choices()}
       </div>
   )
 }
