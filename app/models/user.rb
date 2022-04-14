@@ -14,6 +14,10 @@ class User < ApplicationRecord
         self.recent_choice.situations.last
     end
 
+    def upcoming_situation_text
+        self.upcoming_situation.story_text
+    end
+
     def upcoming_choices
         self.upcoming_situation.choices.drop(1)
     end

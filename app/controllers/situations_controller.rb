@@ -10,4 +10,9 @@ class SituationsController < ApplicationController
         render json: situation
     end
 
+    def first
+        situation = Situation.first
+        render json: situation
+    end
+
 end
