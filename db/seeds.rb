@@ -34,6 +34,9 @@ puts "seeding situation_choices..."
 SituationChoice.create(choice: choice1a, situation: situation1, outcome: true)
 SituationChoice.create(choice: choice1a, situation: situation2a, outcome: false)
 SituationChoice.create(choice: choice1b, situation: situation1, outcome: true)
+SituationChoice.create(choice: choice1b, situation: situation2b, outcome: false)
+SituationChoice.create(choice: choice2aa, situation: situation2a, outcome: true)
+SituationChoice.create(choice: choice2ab, situation: situation2a, outcome: true)
 
 puts "seeding user_choices..."
 user_choice1a = UserChoice.create(user: user, choice: choice1a)
