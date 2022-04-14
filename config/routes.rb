@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   resources :situation_choices
-  resources :user_choices
+  resources :user_choices, only: [:update]
   resources :choices, only: [:index, :show]
   resources :situations, only: [:index, :show]
   resources :users, only: [:index]

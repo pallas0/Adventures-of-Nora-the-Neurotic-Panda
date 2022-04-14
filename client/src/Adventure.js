@@ -35,6 +35,10 @@ function Adventure() {
     }
   }
 
+  function handleChoiceClick(id) {
+    console.log(id)
+  }
+
   const render_story = user ? <Container key={user.upcoming_situation.id}>
     {user.upcoming_situation_text}
   </Container> : <Container></Container>
@@ -44,7 +48,9 @@ function Adventure() {
   const mapped_choices = () => {
     if (user) {
       const choice_list = user.upcoming_choices.map((choice) => {
-        return <Container key={choice.id}>{choice.choice_text}</Container>
+        return <Container 
+        key={choice.id}
+        onClick={() => handleChoiceClick(choice.id)}>{choice.choice_text}</Container>
       })
       return choice_list
     }
