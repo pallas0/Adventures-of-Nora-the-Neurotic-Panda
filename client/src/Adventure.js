@@ -24,6 +24,8 @@ function Adventure() {
       })
   }
 
+  //const 
+
   return (
     <div>
       <Button onClick={handleLogOutClick}>Logout</Button>
@@ -33,4 +35,17 @@ function Adventure() {
   )
 }
 
+
+//if user.user_choices doesn't exist
+  //show situation1.story_text
+//else
+//user.choice.choice_text
+//end
+//^stick methods in the models to make retrieval easier
+//
+///user.user_choice is just going to get replaced at each choice
+//
+//
+//patch request on save
+//update through backend as well
 export default Adventure
