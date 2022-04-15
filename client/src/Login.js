@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import Alert from '@mui/material/Alert';
 import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(null)
 
   let navigate = useNavigate();
 
@@ -22,11 +24,12 @@ function Login() {
         r.json().then((user) => console.log(user));
         navigate("/adventure")
       } else {
-        r.json().then((err) => console.log(err))
+        r.json().then((err) => setError(err.error))
       }
     });
-    //navigate("/adventure")
   }
+
+  console.log(error)
 
   return (
     <div>
@@ -40,6 +43,8 @@ function Login() {
       value = {password}
       onChange = {(e) => setPassword(e.target.value)}/>
       <Button onClick={handleClick}>Submit and Continue</Button>
+      <div> { error ? <Alert severity="error" key={error}>{error}</Alert>
+       : null} </div>
     </div>
   )
 }
