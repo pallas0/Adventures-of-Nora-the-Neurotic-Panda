@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react'
 import Button from '@mui/material/Button';
 import { useNavigate } from "react-router-dom";
 import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
 
 function Adventure() {
   const [user, setUser] = useState(null);
@@ -60,9 +62,9 @@ function Adventure() {
   const mapped_choices = () => {
     if (user) {
       const choice_list = user.upcoming_choices.map((choice) => {
-        return <Container 
+        return <Grid><Container
         key={choice.id}
-        onClick={() => handleChoiceClick(choice.id)}>{choice.choice_text}</Container>
+        onClick={() => handleChoiceClick(choice.id)}>{choice.choice_text}</Container></Grid>
       })
       return choice_list
     }
@@ -71,11 +73,15 @@ function Adventure() {
  
 
   return (
-    <div>
-      <Button onClick={handleLogOutClick}>Logout</Button>
+    <div className='adventure_main'>
+      <Button className="logout" onClick={handleLogOutClick}>Logout</Button>
       {/* <Button>Save</Button> */}
       {render_story}
+      <Box  className="choices">
+      <Grid container spacing = {5}>
       {mapped_choices()}
+      </Grid>
+      </Box>
       </div>
   )
 }

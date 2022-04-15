@@ -21,14 +21,14 @@ user = User.create(username: "jesus", password: "test")
 user2 = User.create(username: "woodstock", password: "kettlecorn")
 
 puts "seeding situations..."
-situation1 = Situation.create(story_text: "1")
+situation1 = Situation.create(story_text: "Nora’s paw hovered above her front door knob as she decided how to respond to the mysterious thud from her kitchen.")
 situation2a = Situation.create(story_text: "2A")
 situation2b = Situation.create(story_text: "2B")
 
 puts "seeding choices"
-choice0 = Choice.create(choice_text: "In the beginning")
-choice1a = Choice.create(choice_text: "1A")
-choice1b = Choice.create(choice_text: "1B")
+choice0 = Choice.create(choice_text: "In the Beginning")
+choice1a = Choice.create(choice_text: "Nora turned to investigate")
+choice1b = Choice.create(choice_text: "Nora shook off her suspicions")
 choice2aa = Choice.create(choice_text: "2AA")
 choice2ab = Choice.create(choice_text: "2AB")
 

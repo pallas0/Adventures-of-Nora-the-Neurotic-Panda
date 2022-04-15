@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.adventure_main {
+  max-width: 70vh;
+  margin: auto;
+
+}
+
+.choices {
+  position: absolute;
+  margin: auto;
+  top: 250px;
+}
