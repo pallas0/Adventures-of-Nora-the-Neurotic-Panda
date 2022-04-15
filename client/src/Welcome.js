@@ -30,6 +30,10 @@ function Welcome() {
         setClicked(true);
       })
     }
+    else {
+      setQuote(null)
+      setClicked(false)
+    }
   }
   
 
@@ -59,7 +63,9 @@ function Welcome() {
         <h1>Adventures of Nora the Neurotic Panda</h1>
         <Button onClick={handleBeginClick}>Begin Adventure</Button>
         <Button onClick={handleResumeClick}>Resume Adventure</Button>
-        <Container onClick={handleQuoteClick}>[click me for quote ^_^]</Container>
+        <div onClick={handleQuoteClick}>{clicked ? <Container onClick={handleQuoteClick}>"{quote.text}"
+        <br/> - {quote.author}<br/>
+        </Container> : "[click for a quote ^_^]"}</div>
     </div>
   )
 }
