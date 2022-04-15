@@ -36,7 +36,19 @@ function Adventure() {
   }
 
   function handleChoiceClick(id) {
-    console.log(id)
+    console.log(user.user_choice_id)
+    fetch(`/user_choices/${user.user_choice_id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({choice_id: id}),
+    })
+    .then((r) => r.json())
+    .then((r) => {
+      console.log(r)
+      window.location.reload(false);
+    })
   }
 
   const render_story = user ? <Container key={user.upcoming_situation.id}>

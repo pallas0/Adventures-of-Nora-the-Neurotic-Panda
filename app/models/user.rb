@@ -10,6 +10,10 @@ class User < ApplicationRecord
         self.user_choices.first.choice
     end
 
+    def user_choice_id
+        self.user_choices.first.id
+    end
+
     def upcoming_situation
         self.recent_choice.situations.last
     end
