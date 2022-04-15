@@ -3,6 +3,7 @@ import FormControl from '@mui/material/FormControl';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { useNavigate } from "react-router-dom";
+import Alert from '@mui/material/Alert';
 
 function SignUp() {
   const [username, setUsername] = useState("")
@@ -27,7 +28,7 @@ function SignUp() {
         r.json().then((user) => console.log(user));
         navigate("/adventure")
       } else {
-        r.json().then((err) => setError(err));
+        r.json().then((err) => setError(err.error));
       }
     });
   }
@@ -56,7 +57,7 @@ function SignUp() {
       value = {password}
       onChange = {(e) => setPassword(e.target.value)}/>
       <Button onClick={handleClick}>Submit and Start Game</Button>
-      {/* <div>{error}</div> */}
+      <div>{error ? <Alert severity="error">{error}</Alert> : null}</div>
     </div>
   )
 }
