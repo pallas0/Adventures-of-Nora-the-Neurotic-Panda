@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 function SignUp() {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
+  const [error, setError] = useState(null)
 
   let navigate = useNavigate();
 
@@ -26,10 +27,18 @@ function SignUp() {
         r.json().then((user) => console.log(user));
         navigate("/adventure")
       } else {
-        r.json().then((err) => console.log(err));
+        r.json().then((err) => setError(err));
       }
     });
   }
+
+  // function test() {
+  //   if (error) {
+  //     console.log(error.error)
+  //   }
+  // }
+
+  // test()
 
 
   return (
@@ -47,6 +56,7 @@ function SignUp() {
       value = {password}
       onChange = {(e) => setPassword(e.target.value)}/>
       <Button onClick={handleClick}>Submit and Start Game</Button>
+      {/* <div>{error}</div> */}
     </div>
   )
 }
