@@ -73,7 +73,7 @@ function Adventure() {
   return (
     <div>
       <Button onClick={handleLogOutClick}>Logout</Button>
-      <Button>Save</Button>
+      {/* <Button>Save</Button> */}
       {render_story}
       {mapped_choices()}
       </div>

@@ -15,6 +15,11 @@ class UserChoicesController < ApplicationController
         user_choice = UserChoice.find_by(id: params[id])
         render json: user_choice
     end
+
+    def create
+        user_choice = UserChoice.create(user_choice_params)
+        render json: user_choice
+    end
     
     private
       
