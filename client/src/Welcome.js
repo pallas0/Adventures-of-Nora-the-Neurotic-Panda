@@ -1,9 +1,14 @@
 import React, {useEffect, useState} from 'react'
 import Button from '@mui/material/Button';
 import { useNavigate } from "react-router-dom";
+import Container from '@mui/material/Container';
 
 function Welcome() {
   const [user, setUser] = useState(null);
+  const [clicked, setClicked] = useState(false);
+  const [quote, setQuote] = useState(null);
+  const api_link = "https://type.fit/api/quotes"
+
   let navigate = useNavigate();
 
   useEffect(() => {
@@ -13,6 +18,19 @@ function Welcome() {
       }
     })
   }, []);
+  
+  function handleQuoteClick() {
+    if (!clicked) {
+      fetch(api_link)
+      .then((r) => r.json())
+      .then((r) => {
+        let n = Math.floor(Math.random()*1000)
+        console.log(r[n])
+        setQuote(r[n]);
+        setClicked(true);
+      })
+    }
+  }
   
 
   function handleBeginClick() {
@@ -41,6 +59,7 @@ function Welcome() {
         <h1>Adventures of Nora the Neurotic Panda</h1>
         <Button onClick={handleBeginClick}>Begin Adventure</Button>
         <Button onClick={handleResumeClick}>Resume Adventure</Button>
+        <Container onClick={handleQuoteClick}>[click me for quote ^_^]</Container>
     </div>
   )
 }
