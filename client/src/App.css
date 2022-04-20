@@ -40,11 +40,32 @@
 .adventure_main {
   max-width: 70vh;
   margin: auto;
-
+  background-color: lightblue;
+  
 }
 
-.choices {
+/* .choices {
   position: absolute;
   margin: auto;
-  top: 250px;
+  top: 500px;
+  height: auto;
+  width: 250px;
+} */
+
+.choices {
+  display: flex;
+}
+
+
+
+.eachchoice {
+  display: flex;
+  background-color: lightgreen;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  margin-top: 50px;
+  margin-right: 25px;
+  margin-left: 25px;
+
 }

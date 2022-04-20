@@ -62,9 +62,9 @@ function Adventure() {
   const mapped_choices = () => {
     if (user) {
       const choice_list = user.upcoming_choices.map((choice) => {
-        return <Grid><Container
+        return <button className="eachchoice"
         key={choice.id}
-        onClick={() => handleChoiceClick(choice.id)}>{choice.choice_text}</Container></Grid>
+        onClick={() => handleChoiceClick(choice.id)}>{choice.choice_text}</button>
       })
       return choice_list
     }
@@ -77,11 +77,9 @@ function Adventure() {
       <Button className="logout" onClick={handleLogOutClick}>Logout</Button>
       {/* <Button>Save</Button> */}
       {render_story}
-      <Box  className="choices">
-      <Grid container spacing = {5}>
+      <div  className="choices">
       {mapped_choices()}
-      </Grid>
-      </Box>
+      </div>
       </div>
   )
 }
