@@ -38,19 +38,25 @@
 }
 
 .adventure_main {
-  max-width: 70vh;
+  max-width: 80vh;
   margin: auto;
   background-color: lightblue;
   
 }
 
-/* .choices {
-  position: absolute;
-  margin: auto;
-  top: 500px;
-  height: auto;
-  width: 250px;
-} */
+.story-text {
+  padding: 25px;
+}
+
+.logout {
+  float: left;
+}
+
+.reset {
+  float: right;
+}
+
+
 
 .choices {
   display: flex;
@@ -60,10 +66,10 @@
 
 .eachchoice {
   display: flex;
-  background-color: lightgreen;
+  background-color: whitesmoke;
   border-style: solid;
   border-width: 1px;
-  border-color: black;
+  border-color: grey;
   margin-top: 50px;
   margin-right: 25px;
   margin-left: 25px;

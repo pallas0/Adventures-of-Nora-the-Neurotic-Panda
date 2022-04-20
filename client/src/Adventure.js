@@ -66,6 +66,10 @@ function Adventure() {
     })
   }
 
+  function handleHomeClick() {
+    navigate("/");
+  }
+
   const render_story = user ? <Container key={user.upcoming_situation.id}>
     {user.upcoming_situation_text}
   </Container> : <Container></Container>
@@ -87,10 +91,14 @@ function Adventure() {
 
   return (
     <div className='adventure_main'>
+      <div className="buttons">
       <Button className="logout" onClick={handleLogOutClick}>Logout</Button>
+      <Button onClick={handleHomeClick}>Home</Button>
       <Button className="reset" onClick={handleResetClick}>Start Over</Button>
-      {/* <Button>Save</Button> */}
+      </div>
+      <div className="story-text">
       {render_story}
+      </div>
       <div  className="choices">
       {mapped_choices()}
       </div>
