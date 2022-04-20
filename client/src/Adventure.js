@@ -37,6 +37,19 @@ function Adventure() {
     }
   }
 
+  function handleResetClick() {
+    fetch(`/user_choices/${user.user_choice_id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({choice_id: 1}),
+    })
+    .then((r) => {
+      window.location.reload(false);
+    })
+  }
+
   function handleChoiceClick(id) {
     console.log(user.user_choice_id)
     fetch(`/user_choices/${user.user_choice_id}`, {
@@ -75,6 +88,7 @@ function Adventure() {
   return (
     <div className='adventure_main'>
       <Button className="logout" onClick={handleLogOutClick}>Logout</Button>
+      <Button className="reset" onClick={handleResetClick}>Start Over</Button>
       {/* <Button>Save</Button> */}
       {render_story}
       <div  className="choices">
