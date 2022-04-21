@@ -29,7 +29,7 @@ function Login() {
     });
   }
 
-  console.log(error)
+
 
   return (
     <div>
@@ -37,10 +37,12 @@ function Login() {
       <TextField
       label="Username"
       value = {username}
+      className = "user-text"
       onChange = {(e) => setUsername(e.target.value)}/>
       <TextField
       label="Password"
       value = {password}
+      className = "password-text"
       onChange = {(e) => setPassword(e.target.value)}/>
       <Button onClick={handleClick}>Submit and Continue</Button>
       <div> { error ? <Alert severity="error" key={error}>{error}</Alert>

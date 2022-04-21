@@ -41,6 +41,39 @@ body {
   }
 }
 
+.p1 {
+  max-width: 100vh;
+  padding: 25px;
+  margin: auto;
+  font-size: large;
+}
+
+.p2 {
+  max-width: 100vh;
+  margin: auto;
+  font-size: large;
+}
+
+.p3 {
+  max-width: 100vh;
+  padding: 25px;
+  margin: auto;
+  font-size: large;
+}
+
+.user-text {
+  background-color: whitesmoke;
+}
+
+.password-text {
+  background-color: whitesmoke;
+}
+
+.quote {
+  position: fixed;
+  right: 25px; bottom: 10px;
+}
+
 .adventure_main {
   max-width: 85vh;
   margin: auto;

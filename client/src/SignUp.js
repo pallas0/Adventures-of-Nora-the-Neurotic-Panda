@@ -49,10 +49,12 @@ function SignUp() {
       label="Name"
       defaultValue=""/> */}
       <TextField
+      className='user-text'
       label="Username"
       value = {username}
       onChange = {(e) => setUsername(e.target.value)}/>
       <TextField
+      className='password-text'
       label="Password"
       value = {password}
       onChange = {(e) => setPassword(e.target.value)}/>
