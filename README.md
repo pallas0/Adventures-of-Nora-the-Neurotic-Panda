@@ -2,6 +2,8 @@
 
 Welcome to Adventures of Nora the Neurotic Panda, a text-based adventure game built with React, Ruby on Rails, and Postgresql. Embark on an exciting journey with Nora, the neurotic yet lovable panda, as she navigates a vampiric conspiracy, thwarts the attempted kidnapping of her cat, Archduke Ferdinand, or ignores all signs of strangeness and stubbornly goes about her day; the choice is yours. This README will guide you through the setup and provide an overview of the project structure.
 
+I built this game because I wasn't able to find a full stack text-based adventure game template for React and Ruby, and I wanted one to exist.  The story line's inspired by my panda stress squishy.
+
 ## Screenshots
 
 [Home Page]<img width="1389" alt="Screenshot 2023-05-24 at 6 25 14 PM" src="https://github.com/pallas0/Adventures-of-Nora-the-Neurotic-Panda/assets/52135849/7b3b0e50-90d9-4d36-83e0-6e4b061fee28">
